@@ -2,9 +2,11 @@ import express from "express";
 import Ffmpeg from "fluent-ffmpeg";
 
 const app = express();
+app.use(express.json());
 
 
 app.post("/proccess-video", (req, res) => {
+    //get path from request body
     const inputFilePath = req.body.inputFilePath;
     const outputFilePath = req.body.outputFilePath;
 
